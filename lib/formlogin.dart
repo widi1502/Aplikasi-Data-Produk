@@ -20,7 +20,7 @@ class _DesainFormLoginState extends State<DesainFormLogin> {
         key: formKey,
         child: Center(
           child: Container(
-            width: 280, height: 250,
+            width: 300, height: 200,
             child: Card(
               elevation: 10,
               shadowColor: Colors.pink,
@@ -29,6 +29,7 @@ class _DesainFormLoginState extends State<DesainFormLogin> {
                 padding: const EdgeInsets.all(10),
                 child: Column(
                   children: [
+                    const SizedBox(height: 10,),
                     TextFormField(
                       controller: cUser,
                       decoration: InputDecoration(
@@ -71,8 +72,8 @@ class _DesainFormLoginState extends State<DesainFormLogin> {
                         if(formKey.currentState!.validate()){
                           if(cUser.text == tUser && cPass.text == tPass){
                             //perintah untuk memanggil halaman baru
-                            //Navigator.push(context, route)
-                            Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context) => DesainDataProduk(),), (route) => false);
+                            Navigator.push(context, MaterialPageRoute(builder: (context) => DesainDataProduk(),));
+                            //Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context) => DesainDataProduk(),), (route) => false);
                           }else{
                             showDialog(
                               context: context, 
